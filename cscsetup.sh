@@ -65,4 +65,9 @@ gsettings set org.gnome.desktop.interface icon-theme Ultra-Flat
 gsettings set com.canonical.Unity.Launcher favorites "['application://org.gnome.Nautilus.desktop', 'application://unity-control-center.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'application://google-chrome.desktop', 'application://sublime_text.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
 "
 
+# Set Grub
 
+echo -e "if background_color 96,119,179,0 ; then\n  clear\nfi" > /usr/share/plymouth/themes/ubuntu-logo/ubuntu-logo.grub
+sed -i 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/g' /etc/default/grub
+
+update-grub
