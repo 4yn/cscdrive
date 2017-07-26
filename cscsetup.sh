@@ -43,7 +43,8 @@ add-apt-repository ppa:noobslab/icons -y
 
 apt update
 
-apt install synaptic sublime-text python-software-properties flatabulous-theme ultra-flat-icons google-chrome-stable broadcom-sta-common broadcom-sta-dkms broadcom-sta-source firmware-b43-installer vlc curl -y
+apt install synaptic sublime-text python-software-properties flatabulous-theme ultra-flat-icons google-chrome-stable vlc curl -y
+# broadcom-sta-common broadcom-sta-dkms broadcom-sta-source firmware-b43-installer 
 
 # Bloat removal
 
@@ -57,7 +58,7 @@ apt install nodejs npm -y
 
 # Total Update
 
-apt upgrade
+# apt upgrade
 
 # Set UI
 
@@ -69,6 +70,6 @@ gsettings set com.canonical.Unity.Launcher favorites "['application://org.gnome.
 # Set Grub
 
 echo -e "if background_color 96,119,179,0 ; then\n  clear\nfi" > /usr/share/plymouth/themes/ubuntu-logo/ubuntu-logo.grub
-sed -i 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/g' /etc/default/grub
+sed -i 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=0/g' /etc/default/grub
 
 update-grub
